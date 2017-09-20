@@ -1,0 +1,20 @@
+{
+    "name": "divineomega/laravel-extendable-basket",
+    "type": "library",
+    "require": {
+        "illuminate/database": "^5.5",
+        "illuminate/session": "^5.5"
+    },
+    "license": "LGPLv3",
+    "authors": [
+        {
+            "name": "Jordan Hall",
+            "email": "jordan@hall05.co.uk"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DivineOmega\\LaravelExtendableBasket\\": "./src/"
+        }
+    }
+}
