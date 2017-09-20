@@ -2,7 +2,6 @@
 namespace DivineOmega\LaravelExtendableBasket\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use DivineOmega\LaravelExtendableBasket\Interfaces\Basketable;
 use Exception;
 
 class Basket extends Model
@@ -33,10 +32,10 @@ class Basket extends Model
         return $this->hasMany('DivineOmega\LaravelExtendableBasket\Models\BasketItem');
     }
 
-    public function add(int $quantity, Basketable $basketable)
+    public function add(int $quantity, BasketableModel   $basketable)
     {
         if ($quantity < 1) {
-            throw new Exception('Quantity to add can not be less than one.');
+            throw new Exception('Quantity is less than one.');
         }
 
         foreach($this->items as $item) {
