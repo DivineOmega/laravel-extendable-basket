@@ -11,12 +11,12 @@ abstract class Basket extends Model implements BasketInterface
 
     public static function getCurrent()
     {
-        $basket = self::find(session(self::BASKET_SESSION_KEY));
+        $basket = static::find(session(static::BASKET_SESSION_KEY));
 
         if (!$basket) {
-            $basket = new self;
+            $basket = new static;
             $basket->save();
-            session()->put(self::BASKET_SESSION_KEY, $basket->id);
+            session()->put(static::BASKET_SESSION_KEY, $basket->id);
         }
 
         return $basket;
@@ -24,8 +24,8 @@ abstract class Basket extends Model implements BasketInterface
 
     public static function getNew()
     {
-        session()->forget(self::BASKET_SESSION_KEY);
-        return self::getCurrent();
+        session()->forget(static::BASKET_SESSION_KEY);
+        return static::getCurrent();
     }
 
     public function add(int $quantity, BasketableModel   $basketable)
