@@ -2,14 +2,10 @@
 namespace DivineOmega\LaravelExtendableBasket\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use DivineOmega\LaravelExtendableBasket\Interfaces\BasketItemInterface;
 
-class BasketItem extends Model
+abstract class BasketItem extends Model implements BasketItemInterface
 {
-    public function basket()
-    {
-        return $this->belongsTo('DivineOmega\LaravelExtendableBasket\Models\Basket');
-    }
-
     public function basketable()
     {
         return $this->morphTo();

@@ -2,9 +2,10 @@
 namespace DivineOmega\LaravelExtendableBasket\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use DivineOmega\LaravelExtendableBasket\Interfaces\BasketInterface;
 use Exception;
 
-class Basket extends Model
+abstract class Basket extends Model implements BasketInterface
 {
     const BASKET_SESSION_KEY = 'doleb_basket_id';
 
@@ -25,11 +26,6 @@ class Basket extends Model
     {
         session()->forget(BASKET_SESSION_KEY);
         return self::getCurrent();
-    }
-
-    public function items()
-    {
-        return $this->hasMany('DivineOmega\LaravelExtendableBasket\Models\BasketItem');
     }
 
     public function add(int $quantity, BasketableModel   $basketable)
