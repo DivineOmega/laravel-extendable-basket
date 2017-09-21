@@ -3,7 +3,8 @@
     "type": "library",
     "require": {
         "illuminate/database": "^5.5",
-        "illuminate/session": "^5.5"
+        "illuminate/session": "^5.5",
+        "illuminate/support": "^5.5"
     },
     "license": "LGPLv3",
     "authors": [
