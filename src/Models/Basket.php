@@ -76,4 +76,9 @@ abstract class Basket extends Model implements BasketInterface
 
         return $totalNumberOfItems;
     }
+
+    public function isEmpty()
+    {
+        return ($this->getTotalNumberOfItems() <= 0);
+    }
 }

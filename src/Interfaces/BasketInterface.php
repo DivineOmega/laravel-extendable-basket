@@ -11,4 +11,5 @@ interface BasketInterface
     public function add(int $quantity, BasketableModel $basketable);
     public function getSubtotal();
     public function getTotalNumberOfItems();
+    public function isEmpty();
 }
