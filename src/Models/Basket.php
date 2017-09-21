@@ -42,8 +42,8 @@ abstract class Basket extends Model implements BasketInterface
             }
         }
 
-        $basketItem = $basket->items()->getModel();
-        
+        $basketItem = $this->items()->getModel();
+
         $item = new $basketItem;
         $item->quantity = $quantity;
         $item->basketable()->attach($basketable);
