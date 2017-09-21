@@ -28,7 +28,7 @@ abstract class Basket extends Model implements BasketInterface
         return static::getCurrent();
     }
 
-    public function add(int $quantity, BasketableModel   $basketable)
+    public function add(int $quantity, BasketableModel $basketable)
     {
         if ($quantity < 1) {
             throw new Exception('Quantity is less than one.');
