@@ -1,5 +1,5 @@
 <?php
-namespace DivineOmega\LaravelExtendableBasket\Providers\ServiceProvider;
+namespace DivineOmega\LaravelExtendableBasket\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
