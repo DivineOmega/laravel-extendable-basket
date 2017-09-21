@@ -19,6 +19,8 @@ abstract class Basket extends Model implements BasketInterface
             session()->put(static::BASKET_SESSION_KEY, $basket->id);
         }
 
+        $basket->load(['items', 'items.basketable']);
+
         return $basket;
     }
 
