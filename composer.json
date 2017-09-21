@@ -21,7 +21,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "DivineOmega\\LaravelExtendableBasket\\Providers\\ServiceProvider\\LaravelExtendableBasketServiceProvider"
+                "DivineOmega\\LaravelExtendableBasket\\Providers\\LaravelExtendableBasketServiceProvider"
             ]
         }
     }
