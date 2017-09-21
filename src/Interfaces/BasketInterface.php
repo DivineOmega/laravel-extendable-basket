@@ -1,6 +1,8 @@
 <?php
 namespace DivineOmega\LaravelExtendableBasket\Interfaces;
 
+use DivineOmega\LaravelExtendableBasket\Models\BasketableModel;
+
 interface BasketInterface
 {
     public static function getCurrent();
