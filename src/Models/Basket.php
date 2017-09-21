@@ -11,7 +11,7 @@ abstract class Basket extends Model implements BasketInterface
 
     public static function getCurrent()
     {
-        $basket = self::find(session(BASKET_SESSION_KEY));
+        $basket = self::find(session(self::BASKET_SESSION_KEY));
 
         if (!$basket) {
             $basket = new self;
