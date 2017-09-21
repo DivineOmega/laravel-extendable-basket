@@ -17,5 +17,12 @@
         "psr-4": {
             "DivineOmega\\LaravelExtendableBasket\\": "./src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DivineOmega\\LaravelExtendableBasket\\Providers\\ServiceProvider\\LaravelExtendableBasketServiceProvider"
+            ]
+        }
     }
 }
