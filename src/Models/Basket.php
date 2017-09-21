@@ -16,7 +16,7 @@ abstract class Basket extends Model implements BasketInterface
         if (!$basket) {
             $basket = new self;
             $basket->save();
-            session()->put(BASKET_SESSION_KEY, $basket->id);
+            session()->put(self::BASKET_SESSION_KEY, $basket->id);
         }
 
         return $basket;
@@ -24,7 +24,7 @@ abstract class Basket extends Model implements BasketInterface
 
     public static function getNew()
     {
-        session()->forget(BASKET_SESSION_KEY);
+        session()->forget(self::BASKET_SESSION_KEY);
         return self::getCurrent();
     }
 
