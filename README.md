@@ -117,6 +117,17 @@ currently exists in the session, one will be created.
 $basket = Basket::getCurrent();
 ```
 
+### Getting a new basket
+
+If you need to discard the current basket and create a new one, such as after a 
+user has placed an order, you can use the `getNew` method.
+
+```php
+$basket = Basket::getNew();
+```
+
+This method essentially doubles as emptying the basket.
+
 ### Add item(s) to the basket
 
 After getting the current basket, you can easily add items to it using the basket's
@@ -180,6 +191,15 @@ shows how to use this method.
 ```php
 $item = $basket->items->first();
 $item->getPrice();
+```
+
+## Getting the total number of items in the basket
+
+There is a single method in the basket class that can sum up all the basket item quantities.
+Just call the `getTotalNumberOfItems` method, as follows.
+
+```php
+$numItems = $basket->getTotalNumberOfItems();
 ```
 
 ## Getting the basket subtotal
