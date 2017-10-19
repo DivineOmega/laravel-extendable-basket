@@ -5,10 +5,10 @@ These classes must be extended by your application.
 
 ## Installation
 
-Just install using composer.
+Just install the latest version using composer.
 
 ```
-divineomega/laravel-extendable-basket
+composer require divineomega/laravel-extendable-basket
 ```
 
 ## Setup
