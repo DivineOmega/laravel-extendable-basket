@@ -1,6 +1,6 @@
 # Laravel Extendable Basket
 
-The Laravel Extendable basket library provides several abstract classes that implement basic ecommerce basket functionality.
+The Laravel Extendable Basket library provides several abstract classes that implement basic ecommerce basket functionality.
 These classes must be extended by your application.
 
 ## Installation
@@ -17,7 +17,7 @@ You need to perform various setup steps in order to make use of this package.
 
 ### Database tables
 
-Two database tables are required to store basket and basket item data. By default these are called `Baskets` and `BasketItems`. This package provide database migrations to create these tables.
+Two database tables are required to store basket and basket item data. By default these are called `Baskets` and `BasketItems`. This package provides database migrations to create these tables.
 
 Running the following command will move the package's migrations into your `database/migrations` directory.
 
@@ -75,8 +75,8 @@ class BasketItem extends BasketItemModel
 
 ### Basketable model
 
-Anything that be placed in the basket provided by this library is considered
-'basketable'. You can make any existing Eloquent model basketable, simple by
+Anything that can be placed in the basket provided by this library is considered
+'basketable'. You can make any existing Eloquent model basketable, simply by
 making it extend the `Basketable` class, rather than `Model`.
 
 For example, if you had a `Product` model, you can change it as follows.
@@ -143,7 +143,7 @@ foreach($basket->items as $item) {
 
 ## Changing the quantity of a basket item
 
-Each basket item has a quantity associated with it. It is set when and item is
+Each basket item has a quantity associated with it. It is set when an item is
 added to the basket, but can be modified later via the `setQuantity` method.
 
 ```php
@@ -164,7 +164,7 @@ $item->delete();
 ## Getting the unit cost of a basket item
 
 Getting the unit cost of a basket item just involves calling the `getPrice` method of
-the basketable model associated with the baske item. See the example below.
+the basketable model associated with the basket item. See the example below.
 
 ```php
 $item = $basket->items->first();
@@ -173,7 +173,7 @@ $item->basketable->getPrice();
 
 ## Getting the line total of a basket item
 
-The basket item class provides a `getPrice` method gets the line total. This is simply
+The basket item class provides a `getPrice` method that gets the line total. This is simply
 the basketable's price multiplied by the basket item quantity. The example code below
 shows how to use this method.
 
