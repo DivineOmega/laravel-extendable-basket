@@ -4,6 +4,7 @@ namespace DivineOmega\LaravelExtendableBasket\Models;
 use Illuminate\Database\Eloquent\Model;
 use DivineOmega\LaravelExtendableBasket\Interfaces\BasketInterface;
 use Exception;
+use DivineOmega\LaravelExtendableBasket\Interfaces\Basketable;
 
 abstract class Basket extends Model implements BasketInterface
 {
@@ -28,7 +29,7 @@ abstract class Basket extends Model implements BasketInterface
         return static::getCurrent();
     }
 
-    public function add(int $quantity, BasketableModel $basketable)
+    public function add(int $quantity, Basketable $basketable)
     {
         if ($quantity < 1) {
             throw new Exception('Quantity is less than one.');

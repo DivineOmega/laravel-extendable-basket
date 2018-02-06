@@ -77,7 +77,7 @@ class BasketItem extends BasketItemModel
 
 Anything that can be placed in the basket provided by this library is considered
 'basketable'. You can make any existing Eloquent model basketable, simply by
-making it extend the `Basketable` class, rather than `Model`.
+making it implement the `Basketable` interface.
 
 For example, if you had a `Product` model, you can change it as follows.
 
@@ -87,9 +87,9 @@ For example, if you had a `Product` model, you can change it as follows.
 <?php
 namespace App;
 
-use DivineOmega\LaravelExtendableBasket\Models\BasketableModel;
+use DivineOmega\LaravelExtendableBasket\Interfaces\Basketable;
 
-class Product extends BasketableModel {
+class Product extends Model implements Basketable {
 
     // ...
 
