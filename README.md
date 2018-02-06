@@ -73,10 +73,10 @@ class BasketItem extends BasketItemModel
 }
 ```
 
-### Basketable model
+### Basketable interface
 
 Anything that can be placed in the basket provided by this library is considered
-'basketable'. You can make any existing Eloquent model basketable, simply by
+'basketable'. You can make any existing Eloquent model basketable simply by
 making it implement the `Basketable` interface.
 
 For example, if you had a `Product` model, you can change it as follows.
