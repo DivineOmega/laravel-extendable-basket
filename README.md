@@ -87,6 +87,7 @@ For example, if you had a `Product` model, you can change it as follows.
 <?php
 namespace App;
 
+use Illuminate\Database\Eloquent\Model;
 use DivineOmega\LaravelExtendableBasket\Interfaces\Basketable;
 
 class Product extends Model implements Basketable {
