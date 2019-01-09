@@ -1,4 +1,4 @@
-# Laravel Extendable Basket
+# 🛒 Laravel Extendable Basket
 
 [![](https://img.shields.io/packagist/dt/divineomega/laravel-extendable-basket.svg)](https://packagist.org/packages/divineomega/laravel-extendable-basket/stats)
 
