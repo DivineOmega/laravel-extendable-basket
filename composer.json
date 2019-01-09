@@ -1,6 +1,6 @@
 {
     "name": "divineomega/laravel-extendable-basket",
-    "description": "🛒 Laravel Extendable Basket provides several abstract classes that implement basic ecommerce basket functionality"
+    "description": "🛒 Laravel Extendable Basket provides several abstract classes that implement basic ecommerce basket functionality",
     "type": "library",
     "require": {
         "illuminate/database": "^5.5",
