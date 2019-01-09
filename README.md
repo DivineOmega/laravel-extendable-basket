@@ -1,5 +1,7 @@
 # Laravel Extendable Basket
 
+[![](https://img.shields.io/packagist/dt/divineomega/laravel-extendable-basket.svg)](https://packagist.org/packages/divineomega/laravel-extendable-basket/stats)
+
 The Laravel Extendable Basket library provides several abstract classes that implement basic ecommerce basket functionality.
 These classes must be extended by your application.
 
