@@ -131,6 +131,21 @@ $basket = Basket::getNew();
 
 This method essentially doubles as emptying the basket.
 
+### Manual basket management
+
+The static methods `getCurrent` and `getNew` store the current basket ID in the 
+session. If you do not want this, you can manage baskets yourself, as you would 
+with any Eloquent model.
+
+```php
+// Get new basket
+$basket = new Basket();
+
+// Get current basket
+$userBasketId = Auth::user()->basket_id;
+$basket = Basket::find($userBasketId);
+```
+
 ### Add item(s) to the basket
 
 After getting the current basket, you can easily add items to it using the basket's
