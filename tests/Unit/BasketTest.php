@@ -16,4 +16,22 @@ class BasketTest extends TestCase
         $this->assertTrue($basket instanceof BasketInterface);
         $this->assertDatabaseHas('baskets', $basket->getAttributes());
     }
+
+    /**
+     * Ensures that retrieving the current basket correctly gets the
+     * previously created basket.
+     */
+    public function testGettingCurrentBasket()
+    {
+        /** @var Basket $basket */
+        $newBasket = Basket::getNew();
+
+        /** @var Basket $basket */
+        $currentBasket = Basket::getCurrent();
+
+        $this->assertTrue($currentBasket instanceof BasketInterface);
+        $this->assertDatabaseHas('baskets', $currentBasket->getAttributes());
+
+        $this->assertEquals($newBasket->id, $currentBasket->id);
+    }
 }
