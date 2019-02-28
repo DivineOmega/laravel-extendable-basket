@@ -8,6 +8,10 @@
         "illuminate/session": "^5.5",
         "illuminate/support": "^5.5"
     },
+    "require-dev": {
+        "orchestra/testbench": "~3.0",
+        "phpunit/phpunit": "^8.0"
+    },
     "license": "LGPL-3.0-only",
     "authors": [
         {
@@ -18,6 +22,11 @@
     "autoload": {
         "psr-4": {
             "DivineOmega\\LaravelExtendableBasket\\": "./src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DivineOmega\\LaravelExtendableBasket\\Tests\\": "./tests/"
         }
     },
     "extra": {
