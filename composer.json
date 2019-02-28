@@ -3,6 +3,7 @@
     "description": "🛒 Laravel Extendable Basket provides several abstract classes that implement basic ecommerce basket functionality",
     "type": "library",
     "require": {
+        "php": ">=7.1",
         "illuminate/database": "^5.5",
         "illuminate/session": "^5.5",
         "illuminate/support": "^5.5"
