@@ -10,7 +10,7 @@ abstract class Basket extends Model implements BasketInterface
 {
     const BASKET_SESSION_KEY = 'doleb_basket_id';
 
-    public static function getCurrent()
+    public static function getCurrent() : BasketInterface
     {
         $basket = static::find(session(static::BASKET_SESSION_KEY));
 
@@ -23,7 +23,7 @@ abstract class Basket extends Model implements BasketInterface
         return $basket;
     }
 
-    public static function getNew()
+    public static function getNew() : BasketInterface
     {
         session()->forget(static::BASKET_SESSION_KEY);
         return static::getCurrent();
@@ -65,7 +65,7 @@ abstract class Basket extends Model implements BasketInterface
         return $subtotal;
     }
 
-    public function getTotalNumberOfItems()
+    public function getTotalNumberOfItems() : int
     {
         $totalNumberOfItems = 0;
 
@@ -76,7 +76,7 @@ abstract class Basket extends Model implements BasketInterface
         return $totalNumberOfItems;
     }
 
-    public function isEmpty()
+    public function isEmpty() : bool
     {
         return ($this->getTotalNumberOfItems() <= 0);
     }
