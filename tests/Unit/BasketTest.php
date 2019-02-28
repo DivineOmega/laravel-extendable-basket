@@ -8,6 +8,9 @@ use DivineOmega\LaravelExtendableBasket\Tests\TestCase;
 
 class BasketTest extends TestCase
 {
+    /**
+     * Ensures that new baskets can be created correctly.
+     */
     public function testCreationOfNewBasket()
     {
         /** @var Basket $basket */
