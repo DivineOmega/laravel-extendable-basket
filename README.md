@@ -49,7 +49,7 @@ use DivineOmega\LaravelExtendableBasket\Models\Basket as BasketModel;
 
 class Basket extends BasketModel
 {
-    public function items()
+    public function items(): HasMany
     {
         return $this->hasMany('App\BasketItem');
     }
@@ -68,7 +68,7 @@ use DivineOmega\LaravelExtendableBasket\Models\BasketItem as BasketItemModel;
 
 class BasketItem extends BasketItemModel
 {
-    public function basket()
+    public function basket(): BelongsTo
     {
         return $this->belongsTo('App\Basket');
     }
