@@ -6,6 +6,10 @@ use DivineOmega\LaravelExtendableBasket\Interfaces\BasketItemInterface;
 
 abstract class BasketItem extends Model implements BasketItemInterface
 {
+    protected $casts = [
+        'meta' => 'object',
+    ];
+
     public function basketable()
     {
         return $this->morphTo();
