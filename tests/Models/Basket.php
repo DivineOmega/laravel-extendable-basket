@@ -9,6 +9,6 @@ class Basket extends BasketModel
 {
     public function items(): HasMany
     {
-        $this->hasMany(BasketItem::class);
+        return $this->hasMany(BasketItem::class);
     }
 }

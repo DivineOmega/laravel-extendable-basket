@@ -37,4 +37,37 @@ class BasketTest extends TestCase
 
         $this->assertEquals($newBasket->id, $currentBasket->id);
     }
+
+    /**
+     * Ensures a newly created basket is empty.
+     */
+    public function testNewBasketIsEmpty()
+    {
+        /** @var Basket $basket */
+        $basket = Basket::getNew();
+
+        $this->assertTrue($basket->isEmpty());
+    }
+
+    /**
+     * Ensures a newly created basket has no items.
+     */
+    public function testNewBasketHasNoItems()
+    {
+        /** @var Basket $basket */
+        $basket = Basket::getNew();
+
+        $this->assertEquals(0, $basket->getTotalNumberOfItems());
+    }
+
+    /**
+     * Ensures a newly created basket has a zero subtotal.
+     */
+    public function testNewBasketHasZeroSubtotal()
+    {
+        /** @var Basket $basket */
+        $basket = Basket::getNew();
+
+        $this->assertEquals(0, $basket->getSubtotal());
+    }
 }
