@@ -4,7 +4,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBasketItemsTable extends Migration
+class AddMetaToBasketItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class CreateBasketItemsTable extends Migration
     public function up()
     {
         Schema::table('basket_items', function (Blueprint $table) {
-            $table->text('meta');
+            $table->text('meta')->default('{}');
         });
     }
 
