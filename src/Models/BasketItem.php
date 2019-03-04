@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 abstract class BasketItem extends Model implements BasketItemInterface
 {
     protected $casts = [
-        'meta' => 'object',
+        'meta' => 'array',
     ];
 
     public function basketable() : MorphTo

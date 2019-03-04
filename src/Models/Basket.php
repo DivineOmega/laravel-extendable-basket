@@ -29,7 +29,7 @@ abstract class Basket extends Model implements BasketInterface
         return static::getCurrent();
     }
 
-    public function add(int $quantity, Basketable $basketable)
+    public function add(int $quantity, Basketable $basketable, array $meta = [])
     {
         if ($quantity < 1) {
             throw new Exception('Quantity is less than one.');
@@ -37,7 +37,8 @@ abstract class Basket extends Model implements BasketInterface
 
         foreach($this->items as $item) {
             if (get_class($item->basketable) === get_class($basketable)
-                && $item->basketable->getKey() === $basketable->getKey()) {
+                && $item->basketable->getKey() === $basketable->getKey()
+                && $item->meta === $meta) {
                 $item->quantity += $quantity;
                 $item->save();
                 return;
@@ -51,6 +52,9 @@ abstract class Basket extends Model implements BasketInterface
         $item->quantity = $quantity;
         $item->basketable_type = get_class($basketable);
         $item->basketable_id = $basketable->getKey();
+        if ($meta) {
+            $item->meta = $meta;
+        }
         $item->save();
 
         unset($this->items);
