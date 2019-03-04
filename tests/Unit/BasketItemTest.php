@@ -124,4 +124,32 @@ class BasketItemTest extends TestCase
         $this->assertEquals($item1->getPrice() + $item2->getPrice(), $basket->getSubtotal());
     }
 
+    /**
+     * Test adding more to existing basket item.
+     */
+    public function testAddingMoreToExistingBasketItem()
+    {
+        $product = Product::FindOrFail(1);
+
+        /** @var Basket $basket */
+        $basket = Basket::getNew();
+
+        $basket->add(1, $product);
+        $basket->add(3, $product);
+
+        $this->assertEquals(1, $basket->items()->count());
+
+        $item = $basket->items()->first();
+
+        $this->assertEquals($product->id, $item->basketable->id);
+        $this->assertEquals(4, $item->quantity);
+        $this->assertEquals($product->price * 4, $item->getPrice());
+
+        $this->assertEquals($product->name, $item->basketable->getName());
+        $this->assertEquals($product->price, $item->basketable->getPrice());
+
+        $this->assertEquals(4, $basket->getTotalNumberOfItems());
+        $this->assertEquals($product->price * 4, $basket->getSubtotal());
+    }
+
 }
