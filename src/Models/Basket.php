@@ -52,6 +52,7 @@ abstract class Basket extends Model implements BasketInterface
         $item->basketable_id = $basketable->id;
         $item->save();
 
+        unset($this->items);
     }
 
     public function getSubtotal()
