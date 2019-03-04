@@ -36,7 +36,8 @@ abstract class Basket extends Model implements BasketInterface
         }
 
         foreach($this->items as $item) {
-            if ($item->basketable == $basketable) {
+            if (get_class($item->basketable) === get_class($basketable)
+                && $item->basketable->getKey() === $basketable->getKey()) {
                 $item->quantity += $quantity;
                 $item->save();
                 return;
@@ -49,7 +50,7 @@ abstract class Basket extends Model implements BasketInterface
         $item->basket_id = $this->id;
         $item->quantity = $quantity;
         $item->basketable_type = get_class($basketable);
-        $item->basketable_id = $basketable->id;
+        $item->basketable_id = $basketable->getKey();
         $item->save();
 
         unset($this->items);
