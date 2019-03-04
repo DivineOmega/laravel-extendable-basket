@@ -181,9 +181,9 @@ class BasketItemTest extends TestCase
     }
 
     /**
-     * Test multiple items can be added to the basket with the same meta data.
+     * Test adding more to existing basket item, with meta data.
      */
-    public function testAddMultipleBasketItemsWithSameMetaData()
+    public function testAddingMoreToExistingBasketItemWithMetaData()
     {
         $product = Product::FindOrFail(1);
 
