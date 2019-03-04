@@ -35,8 +35,8 @@ class BasketItemTest extends TestCase
     }
 
     /**
-     * Test an item can be added to the basket with a multiple quantity set.
-     */
+ * Test an item can be added to the basket with a multiple quantity set.
+ */
     public function testAddBasketItemWithMultipleQuantity()
     {
         $product = Product::FindOrFail(1);
@@ -87,6 +87,41 @@ class BasketItemTest extends TestCase
         $basket = Basket::getNew();
 
         $basket->add(-1, $product);
+    }
+
+    /**
+     * Test multiple items can be added to the basket.
+     */
+    public function testAddMultipleBasketItems()
+    {
+        $product1 = Product::FindOrFail(1);
+        $product2 = Product::FindOrFail(2);
+
+        /** @var Basket $basket */
+        $basket = Basket::getNew();
+
+        $basket->add(2, $product1);
+        $basket->add(4, $product2);
+
+        $item1 = $basket->items[0];
+        $item2 = $basket->items[1];
+
+        $this->assertEquals($product1->id, $item1->basketable->id);
+        $this->assertEquals(2, $item1->quantity);
+        $this->assertEquals($product1->price * 2, $item1->getPrice());
+
+        $this->assertEquals($product1->name, $item1->basketable->getName());
+        $this->assertEquals($product1->price, $item1->basketable->getPrice());
+
+        $this->assertEquals($product2->id, $item2->basketable->id);
+        $this->assertEquals(4, $item2->quantity);
+        $this->assertEquals($product2->price * 4, $item2->getPrice());
+
+        $this->assertEquals($product2->name, $item2->basketable->getName());
+        $this->assertEquals($product2->price, $item2->basketable->getPrice());
+
+        $this->assertEquals($item1->quantity + $item2->quantity, $basket->getTotalNumberOfItems());
+        $this->assertEquals($item1->getPrice() + $item2->getPrice(), $basket->getSubtotal());
     }
 
 }
