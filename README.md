@@ -1,5 +1,7 @@
 # 🛒 Laravel Extendable Basket
 
+[![Build Status](https://travis-ci.com/DivineOmega/laravel-extendable-basket.svg?branch=master)](https://travis-ci.com/DivineOmega/laravel-extendable-basket)
+[![Coverage Status](https://coveralls.io/repos/github/DivineOmega/laravel-extendable-basket/badge.svg?branch=master)](https://coveralls.io/github/DivineOmega/laravel-extendable-basket?branch=master)
 [![](https://img.shields.io/packagist/dt/divineomega/laravel-extendable-basket.svg)](https://packagist.org/packages/divineomega/laravel-extendable-basket/stats)
 
 Laravel Extendable Basket provides several abstract classes that implement basic ecommerce basket functionality.
