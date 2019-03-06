@@ -2,8 +2,6 @@
 
 namespace DivineOmega\LaravelExtendableBasket\Tests\Unit;
 
-use DivineOmega\LaravelExtendableBasket\Interfaces\BasketInterface;
-use DivineOmega\LaravelExtendableBasket\Tests\Models\Basket;
 use DivineOmega\LaravelExtendableBasket\Tests\TestCase;
 use Illuminate\Support\Facades\Schema;
 
