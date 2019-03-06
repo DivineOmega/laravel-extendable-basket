@@ -21,7 +21,7 @@ You need to perform various setup steps in order to make use of this package.
 
 ### Database tables
 
-Two database tables are required to store basket and basket item data. By default these are called `Baskets` and `BasketItems`. This package provides database migrations to create these tables.
+Two database tables are required to store basket and basket item data. By default these are called `baskets` and `basket_items`. This package provides database migrations to create these tables.
 
 To run these migrations, enter the following artisan command.
 
