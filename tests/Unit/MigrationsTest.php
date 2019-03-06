@@ -12,7 +12,7 @@ class MigrationsTest extends TestCase
      */
     public function testMigrations()
     {
-        $this->artisan('migrate:fresh', ['--database' => 'testbench'])->run();
+        $this->artisan('migrate:refresh', ['--database' => 'testbench'])->run();
         $this->loadMigrationsFrom(__DIR__ . '/Database/Migrations');
 
         $this->assertTrue(Schema::hasTable('baskets'));
