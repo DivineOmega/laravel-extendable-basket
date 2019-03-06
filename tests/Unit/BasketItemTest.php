@@ -3,6 +3,7 @@
 namespace DivineOmega\LaravelExtendableBasket\Tests\Unit;
 
 use DivineOmega\LaravelExtendableBasket\Interfaces\BasketInterface;
+use DivineOmega\LaravelExtendableBasket\Models\BasketItem;
 use DivineOmega\LaravelExtendableBasket\Tests\Models\Basket;
 use DivineOmega\LaravelExtendableBasket\Tests\Models\Product;
 use DivineOmega\LaravelExtendableBasket\Tests\TestCase;
@@ -252,4 +253,51 @@ class BasketItemTest extends TestCase
         $this->assertEquals($item1->getPrice() + $item2->getPrice(), $basket->getSubtotal());
     }
 
+    /**
+     * Test a basket item can have it quantity changed.
+     */
+    public function testBasketItemQuantityChange()
+    {
+        $product = Product::FindOrFail(1);
+
+        /** @var Basket $basket */
+        $basket = Basket::getNew();
+
+        $basket->add(1, $product);
+
+        /** @var BasketItem $item */
+        $item = $basket->items()->first();
+
+        $item->setQuantity(2);
+
+        $this->assertEquals($product->id, $item->basketable->id);
+        $this->assertEquals(2, $item->quantity);
+        $this->assertEquals($product->price * 2, $item->getPrice());
+
+        $this->assertEquals($product->name, $item->basketable->getName());
+        $this->assertEquals($product->price, $item->basketable->getPrice());
+
+        $this->assertEquals(2, $basket->getTotalNumberOfItems());
+        $this->assertEquals($product->price * 2, $basket->getSubtotal());
+    }
+
+    /**
+     * Test a basket item is deleted if its quantity is changed to zero.
+     */
+    public function testBasketItemDeletedIfQuantityChangedToZero()
+    {
+        $product = Product::FindOrFail(1);
+
+        /** @var Basket $basket */
+        $basket = Basket::getNew();
+
+        $basket->add(1, $product);
+
+        /** @var BasketItem $item */
+        $item = $basket->items()->first();
+
+        $item->setQuantity(0);
+
+        $this->assertEquals(0, $item = $basket->items()->count());
+    }
 }
