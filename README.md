@@ -23,13 +23,7 @@ You need to perform various setup steps in order to make use of this package.
 
 Two database tables are required to store basket and basket item data. By default these are called `Baskets` and `BasketItems`. This package provides database migrations to create these tables.
 
-Running the following command will move the package's migrations into your `database/migrations` directory.
-
-```
-php artisan vendor:publish --provider="DivineOmega\LaravelExtendableBasket\Providers\LaravelExtendableBasketServiceProvider" --force
-```
-
-If you wish to change the table names, you can modify the migrations. When you're happy, just run the migrations.
+To run these migrations, enter the following artisan command.
 
 ```
 php artisan migrate
