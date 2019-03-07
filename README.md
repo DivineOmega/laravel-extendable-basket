@@ -156,7 +156,7 @@ $quantity = 5;
 $product = Product::FindOrFail(1);
 
 $basket->add($quantity, $product);
-$basket->add($quantity, $product, ['colour' => 'red', 'size' => 'small']);
+$basket->add($quantity, $product, ['colour' => 'red', 'size' => 'medium']);
 ```
 
 ### Getting basket items
