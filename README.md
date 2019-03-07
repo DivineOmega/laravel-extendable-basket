@@ -148,11 +148,15 @@ $basket = Basket::find($userBasketId);
 After getting the current basket, you can easily add items to it using the basket's
 `add` method. You need to provide it with a quantity and any basketable model.
 
+Optionally, you can also provide an array of basket item meta data, which could be 
+used to store information about variations on a product.
+
 ```php
 $quantity = 5;
 $product = Product::FindOrFail(1);
 
 $basket->add($quantity, $product);
+$basket->add($quantity, $product, ['colour' => 'red', 'size' => 'small']);
 ```
 
 ### Getting basket items
