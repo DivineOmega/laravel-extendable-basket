@@ -1,8 +1,9 @@
 <?php
+
 namespace DivineOmega\LaravelExtendableBasket\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use DivineOmega\LaravelExtendableBasket\Interfaces\BasketItemInterface;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 abstract class BasketItem extends Model implements BasketItemInterface

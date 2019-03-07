@@ -13,7 +13,7 @@ class MigrationsTest extends TestCase
     public function testMigrations()
     {
         $this->artisan('migrate:refresh', ['--database' => 'testbench'])->run();
-        $this->loadMigrationsFrom(__DIR__ . '/Database/Migrations');
+        $this->loadMigrationsFrom(__DIR__.'/Database/Migrations');
 
         $this->assertTrue(Schema::hasTable('baskets'));
         $this->assertTrue(Schema::hasTable('basket_items'));
@@ -25,9 +25,8 @@ class MigrationsTest extends TestCase
 
         $this->assertEquals(
             ['id', 'basket_id', 'basketable_id', 'basketable_type',
-                'quantity', 'created_at', 'updated_at', 'meta'],
+                'quantity', 'created_at', 'updated_at', 'meta', ],
             Schema::getColumnListing('basket_items')
         );
     }
-
 }

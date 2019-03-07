@@ -2,7 +2,6 @@
 
 namespace DivineOmega\LaravelExtendableBasket\Tests\Unit;
 
-use DivineOmega\LaravelExtendableBasket\Interfaces\BasketInterface;
 use DivineOmega\LaravelExtendableBasket\Models\BasketItem;
 use DivineOmega\LaravelExtendableBasket\Tests\Models\Basket;
 use DivineOmega\LaravelExtendableBasket\Tests\Models\Product;
@@ -36,8 +35,8 @@ class BasketItemTest extends TestCase
     }
 
     /**
- * Test an item can be added to the basket with a multiple quantity set.
- */
+     * Test an item can be added to the basket with a multiple quantity set.
+     */
     public function testAddBasketItemWithMultipleQuantity()
     {
         $product = Product::FindOrFail(1);
