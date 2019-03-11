@@ -55,7 +55,7 @@ abstract class Basket extends Model implements BasketInterface
         $item->quantity = $quantity;
         $item->basketable_type = get_class($basketable);
         $item->basketable_id = $basketable->getKey();
-        $item->meta = $meta ? $meta : '[]';
+        $item->meta = $meta;
         $item->save();
 
         unset($this->items);
