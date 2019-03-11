@@ -14,7 +14,7 @@ class AddMetaToBasketItemsTable extends Migration
     public function up()
     {
         Schema::table('basket_items', function (Blueprint $table) {
-            $table->text('meta');
+            $table->text('meta')->nullable(false);
         });
     }
 
