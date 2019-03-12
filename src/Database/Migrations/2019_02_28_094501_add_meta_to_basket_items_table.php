@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class AddMetaToBasketItemsTable extends Migration
@@ -13,8 +14,13 @@ class AddMetaToBasketItemsTable extends Migration
      */
     public function up()
     {
-        Schema::table('basket_items', function (Blueprint $table) {
-            $table->text('meta')->default('[]');
+        $dbType = DB::connection()->getPDO()->getAttribute(PDO::ATTR_DRIVER_NAME);
+
+        Schema::table('basket_items', function (Blueprint $table) use ($dbType) {
+            $field = $table->text('meta');
+            if ($dbType === 'sqlite') {
+                $field->default('[]');
+            }
         });
     }
 
