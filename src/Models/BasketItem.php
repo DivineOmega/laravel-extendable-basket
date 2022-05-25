@@ -12,7 +12,7 @@ abstract class BasketItem extends Model implements BasketItemInterface
         'meta' => 'array',
     ];
 
-    public function basketable() : MorphTo
+    public function basketable(): MorphTo
     {
         return $this->morphTo();
     }
