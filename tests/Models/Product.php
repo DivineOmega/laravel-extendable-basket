@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model implements Basketable
 {
-    public function getPrice()
+    public function getPrice($basketItemMeta = null)
     {
         return $this->price;
     }

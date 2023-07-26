@@ -29,6 +29,6 @@ abstract class BasketItem extends Model implements BasketItemInterface
 
     public function getPrice()
     {
-        return $this->quantity * $this->basketable->getPrice();
+        return $this->quantity * $this->basketable->getPrice($this->meta);
     }
 }
