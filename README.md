@@ -16,6 +16,10 @@ Just install the latest version using composer.
 composer require divineomega/laravel-extendable-basket
 ```
 
+## Compatibility
+
+This package supports Laravel versions 5.5 through 10 and requires PHP 8.1 or higher.
+
 ## Setup
 
 You need to perform various setup steps in order to make use of this package.
